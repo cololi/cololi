@@ -1,0 +1,20 @@
+default_language_version:
+  python: python3.10.11
+default_stages: [ commit, pre-rebase, manual ]
+exclude: |
+  ^migrations/.*$
+  ^static/.*$
+  ^templates/.*$
+
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+
+      - id: black
+        name: black
+        entry: black
+        language: python

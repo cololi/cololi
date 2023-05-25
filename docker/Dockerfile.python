@@ -1,0 +1,22 @@
+FROM python:3.8-slim
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+COPY config/sources.list /etc/apt/sources.list
+RUN apt-get update -q && apt-get install -y --no-install-recommends build-essential gcc postgresql libpq-dev -q \
+    &&  apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY ./requirements.txt /app/requirements.txt
+
+RUN groupadd -r nobody && chown nobody:nobody -R /app
+
+
+RUN pip install --upgrade pip --quiet; \
+    pip install -r requirements.txt --quiet
+
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+USER nobody
