@@ -7,9 +7,6 @@ I'm a passionate developer with a love for creating innovative solutions and lea
 - 💬 Ask me about web development, DevOps, and open-source contributions.
 - ⚡ Fun fact: I love hiking and playing the guitar!
 
-## GitHub Stats
-
-![Cololi's GitHub stats](https://github-readme-stats.vercel.app/api?username=cololi&show_icons=true&theme=radical)
 
 ## Technologies & Tools
 
